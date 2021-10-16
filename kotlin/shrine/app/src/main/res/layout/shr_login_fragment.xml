@@ -23,6 +23,7 @@
             android:layout_marginTop="48dp"
             android:layout_marginBottom="16dp"
             app:srcCompat="@drawable/shr_logo"
+            android:tint="?android:attr/textColorPrimary"
             android:contentDescription="@string/shr_logo_content_description"  />
 
         <TextView
@@ -32,11 +33,67 @@
             android:layout_marginBottom="132dp"
             android:text="@string/shr_app_name"
             android:textAllCaps="true"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:textAppearance="@style/TextAppearance.Shrine.Title"/>
 
         <!-- Snippet from "Add text fields" section goes here. -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            style="@style/Widget.Shrine.TextInputLayout"
+            android:hint="@string/shr_hint_username">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
 
         <!-- Snippet from "Add buttons" section goes here. -->
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/password_text_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            style="@style/Widget.Shrine.TextInputLayout"
+            app:errorEnabled="true"
+            app:passwordToggleEnabled="true"
+            app:counterEnabled="true"
+            app:counterMaxLength="20"
+            android:hint="@string/shr_hint_password">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/next_button"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                style="@style/Widget.Shrine.Button"
+                android:text="@string/shr_button_next"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/cancel_button"
+                style="@style/Widget.Shrine.Button.TextButton"
+                android:layout_toStartOf="@id/next_button"
+                android:layout_toLeftOf="@id/next_button"
+                android:layout_marginEnd="12dp"
+                android:layout_marginRight="12dp"
+                android:text="@string/shr_button_cancel"/>
+        </RelativeLayout>
 
     </LinearLayout>
 </ScrollView>

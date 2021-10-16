@@ -5,7 +5,8 @@
         android:id="@+id/search"
         android:icon="@drawable/shr_search"
         android:title="@string/shr_search_title"
-        app:showAsAction="always" />
+        app:showAsAction="always|collapseActionView"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"/>
     <item
         android:id="@+id/filter"
         android:icon="@drawable/shr_filter"
